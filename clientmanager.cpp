@@ -1,6 +1,10 @@
 #include "clientmanager.h"
 #include <QDebug>
 #include <QString>
+#include <QPdfWriter>
+#include <QPainter>
+#include <QFont>
+
 
 
 ClientManager::ClientManager(int id_client,QString nom,QString prenom,QString email,QString num_tlf,int nb_projet)
@@ -19,18 +23,26 @@ bool ClientManager::ajouter()
     QSqlQuery query;
     QString res = QString::number(id_client);
 
-    query.prepare("insert into Client (id_client, nom, prenom, email, num_tlf, nb_projet)" "values (:id_client, :nom, :prenom, :email, :num_tlf, :nb_projet)");
+    query.prepare("INSERT INTO Client (id_client, nom, prenom, email, num_tlf, nb_projet) "
+                  "VALUES (:id_client, :nom, :prenom, :email, :num_tlf, :nb_projet)");
 
-    //creation des variables liees
-    query.bindValue(":id_client",res);
-    query.bindValue(":nom",nom);
-    query.bindValue(":prenom",prenom);
-    query.bindValue(":email",email);
-    query.bindValue(":num_tlf",num_tlf);
-    query.bindValue(":nb_projet",nb_projet);
+    query.bindValue(":id_client", res);
+    query.bindValue(":nom", nom);
+    query.bindValue(":prenom", prenom);
+    query.bindValue(":email", email);
+    query.bindValue(":num_tlf", num_tlf);
+    query.bindValue(":nb_projet", nb_projet);
 
-    return query.exec(); // exec() envoie la requéte pour l'exécuter
+    if (!query.exec()) {
+        qDebug() << "Erreur SQL lors de l'ajout :" << query.lastError().text();
+        return false;
+    }
+
+    return true;
 }
+
+
+
 
 //suppression
 
@@ -45,21 +57,22 @@ bool ClientManager::supprimer(int id_client)
 
 }
 
-QSqlQueryModel * ClientManager::afficher()
-{
-    QSqlQueryModel * model=new QSqlQueryModel();
+QSqlQueryModel * ClientManager::afficher(QString ordre) {
+    QSqlQueryModel * model = new QSqlQueryModel();
 
-    model->setQuery("select * from Client");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id_client"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
-    model->setHeaderData(4,Qt::Horizontal,QObject::tr("email"));
-    model->setHeaderData(5,Qt::Horizontal,QObject::tr("num_tlf"));
-    model->setHeaderData(6,Qt::Horizontal,QObject::tr("nb_projet"));
+    QString query = "SELECT * FROM Client ORDER BY nb_projet " + ordre;
+    model->setQuery(query);
+
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("id_client"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("email"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("num_tlf"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("nb_projet"));
 
     return model;
-
 }
+
 
 
 bool ClientManager::modifier()
@@ -78,6 +91,18 @@ bool ClientManager::modifier()
 
     return query.exec();
 }
+
+
+//tri
+QSqlQueryModel * ClientManager::trierParNbProjet(bool ascendant) {
+    QSqlQueryModel *model = new QSqlQueryModel();
+    QString query = "SELECT * FROM client ORDER BY nb_projet " + QString(ascendant ? "ASC" : "DESC");
+    model->setQuery(query);
+    return model;
+}
+
+
+
 
 
 

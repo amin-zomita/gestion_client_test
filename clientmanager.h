@@ -1,9 +1,7 @@
 #ifndef CLIENTMANAGER_H
 #define CLIENTMANAGER_H
-#include <QString>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
-
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QVector>
@@ -36,9 +34,10 @@ public:
 
     // Database operations for Client
     bool ajouter();
-    QSqlQueryModel * afficher();
+    QSqlQueryModel * afficher(QString ordre = "ASC");
     bool supprimer(int);
     bool modifier();
+    QSqlQueryModel * trierParNbProjet(bool ascendant);
 
 
 };

@@ -50,11 +50,11 @@ public:
     QLabel *label_8;
     QLabel *label_7;
     QLineEdit *IDC;
+    QLabel *nomClient_3;
     QTableView *tableView;
-    QComboBox *comboBox;
+    QComboBox *tri;
     QPushButton *pushButton_8;
     QPushButton *suppclient;
-    QLineEdit *lineEdit_2;
     QLineEdit *lineEdit;
     QPushButton *modifierClient;
     QWidget *widget;
@@ -68,22 +68,13 @@ public:
     QPushButton *pushButton_16;
     QWidget *widget_3;
     QPushButton *pushButton_18;
-    QPushButton *pushButton_10;
+    QPushButton *exportPdfButton;
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
     QLabel *label_9;
     QWidget *page_2;
     QPushButton *pushButton_2;
-    QWidget *widget_2;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton_12;
-    QPushButton *pushButton_13;
-    QPushButton *pushButton_14;
-    QPushButton *pushButton_15;
-    QTableView *tableView_2;
-    QLabel *label;
-    QLabel *label_time;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -145,47 +136,47 @@ public:
         nbcProjet->setGeometry(QRect(50, 380, 81, 20));
         nomClient_2 = new QLineEdit(groupBox);
         nomClient_2->setObjectName("nomClient_2");
-        nomClient_2->setGeometry(QRect(50, 110, 171, 26));
+        nomClient_2->setGeometry(QRect(50, 105, 171, 31));
         nomClient_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "\n"
 "\n"
 "border-radius: 8px;\n"
 "padding: 8px 16px;\n"
-"font-size: 14px;\n"
+"font-size: 12px;\n"
 "font-weight: bold;\n"
 ""));
         prenomClient_2 = new QLineEdit(groupBox);
         prenomClient_2->setObjectName("prenomClient_2");
-        prenomClient_2->setGeometry(QRect(50, 180, 171, 26));
+        prenomClient_2->setGeometry(QRect(50, 175, 171, 31));
         prenomClient_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "\n"
 "\n"
 "border-radius: 8px;\n"
 "padding: 8px 16px;\n"
-"font-size: 14px;\n"
+"font-size: 12px;\n"
 "font-weight: bold;\n"
 ""));
         prenomClient_2->setAlignment(Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter);
         emailClient_2 = new QLineEdit(groupBox);
         emailClient_2->setObjectName("emailClient_2");
-        emailClient_2->setGeometry(QRect(50, 260, 171, 26));
+        emailClient_2->setGeometry(QRect(50, 255, 171, 31));
         emailClient_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "\n"
 "\n"
 "border-radius: 8px;\n"
 "padding: 8px 16px;\n"
-"font-size: 14px;\n"
+"font-size: 12px;\n"
 "font-weight: bold;\n"
 ""));
         numClient_2 = new QLineEdit(groupBox);
         numClient_2->setObjectName("numClient_2");
-        numClient_2->setGeometry(QRect(50, 330, 171, 26));
+        numClient_2->setGeometry(QRect(50, 330, 171, 31));
         numClient_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "\n"
 "\n"
 "border-radius: 8px;\n"
 "padding: 8px 16px;\n"
-"font-size: 14px;\n"
+"font-size: 12px;\n"
 "font-weight: bold;\n"
 ""));
         validerClient = new QPushButton(groupBox);
@@ -232,10 +223,15 @@ public:
         label_7->setStyleSheet(QString::fromUtf8("font: 350 italic 12pt \"Nirmala UI\";"));
         IDC = new QLineEdit(groupBox);
         IDC->setObjectName("IDC");
-        IDC->setGeometry(QRect(40, 40, 161, 26));
+        IDC->setGeometry(QRect(50, 40, 161, 31));
+        IDC->setStyleSheet(QString::fromUtf8(""));
+        nomClient_3 = new QLabel(groupBox);
+        nomClient_3->setObjectName("nomClient_3");
+        nomClient_3->setGeometry(QRect(20, 40, 21, 31));
+        nomClient_3->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         tableView = new QTableView(page);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(710, 220, 591, 291));
+        tableView->setGeometry(QRect(710, 220, 651, 291));
         tableView->setStyleSheet(QString::fromUtf8("QTableView {\n"
 "    background-color: #f8f9fa; /* Fond g\303\251n\303\251ral */\n"
 "    alternate-background-color: #e9ecef; /* Lignes altern\303\251es */\n"
@@ -275,12 +271,12 @@ public:
 "    background-color: #d6e4ff; /* Effet de survol */\n"
 "}\n"
 ""));
-        comboBox = new QComboBox(page);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(1200, 170, 121, 31));
-        comboBox->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+        tri = new QComboBox(page);
+        tri->addItem(QString());
+        tri->addItem(QString());
+        tri->setObjectName("tri");
+        tri->setGeometry(QRect(1200, 170, 151, 31));
+        tri->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "      border: 2px solid #3498db; /* Bleu moderne au focus */\n"
 "\n"
 "        border: 2px solid #cccccc;\n"
@@ -348,24 +344,6 @@ public:
 "    background-color: #1f618d; /* Bleu encore plus fonc\303\251 au clic */\n"
 "    border: 2px solid #154360;\n"
 "}"));
-        lineEdit_2 = new QLineEdit(page);
-        lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(1270, 530, 71, 31));
-        lineEdit_2->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"    font-size: 14px;\n"
-"    font-weight: bold;\n"
-"    border: 2px solid #4A4A4A; /* Bleu comme le bouton */\n"
-"    border-radius: 8px;\n"
-"    padding: 8px 15px;\n"
-"    transition: all 0.3s ease-in-out;\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border: 2px solid #1f618d; /* Changement au focus, comme le hover du bouton */\n"
-"}\n"
-""));
         lineEdit = new QLineEdit(page);
         lineEdit->setObjectName("lineEdit");
         lineEdit->setGeometry(QRect(730, 170, 181, 31));
@@ -610,10 +588,10 @@ public:
 "}\n"
 "\n"
 "/* Effet au survol */"));
-        pushButton_10 = new QPushButton(widget_3);
-        pushButton_10->setObjectName("pushButton_10");
-        pushButton_10->setGeometry(QRect(820, 30, 91, 31));
-        pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        exportPdfButton = new QPushButton(widget_3);
+        exportPdfButton->setObjectName("exportPdfButton");
+        exportPdfButton->setGeometry(QRect(820, 30, 91, 31));
+        exportPdfButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #27ae60; /* Vert moderne */\n"
 "    color: white;\n"
 "    font-size: 14px;\n"
@@ -625,7 +603,7 @@ public:
 "}\n"
 "\n"
 "/* Effet au survol */"));
-        pushButton_10->setIconSize(QSize(35, 35));
+        exportPdfButton->setIconSize(QSize(35, 35));
         label_4 = new QLabel(widget_3);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(410, 20, 71, 41));
@@ -648,53 +626,6 @@ public:
         pushButton_2 = new QPushButton(page_2);
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setGeometry(QRect(210, 0, 161, 31));
-        widget_2 = new QWidget(page_2);
-        widget_2->setObjectName("widget_2");
-        widget_2->setGeometry(QRect(0, 0, 191, 581));
-        widget_2->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        widget_2->setAutoFillBackground(false);
-        widget_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 198, 198);"));
-        pushButton_11 = new QPushButton(widget_2);
-        pushButton_11->setObjectName("pushButton_11");
-        pushButton_11->setGeometry(QRect(10, 10, 171, 101));
-        pushButton_11->setMaximumSize(QSize(16777200, 16777208));
-        pushButton_11->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 255);"));
-        pushButton_12 = new QPushButton(widget_2);
-        pushButton_12->setObjectName("pushButton_12");
-        pushButton_12->setGeometry(QRect(10, 120, 171, 101));
-        pushButton_12->setMaximumSize(QSize(16777200, 16777208));
-        pushButton_12->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 255);"));
-        pushButton_13 = new QPushButton(widget_2);
-        pushButton_13->setObjectName("pushButton_13");
-        pushButton_13->setGeometry(QRect(10, 230, 171, 101));
-        pushButton_13->setMaximumSize(QSize(16777200, 16777208));
-        pushButton_13->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 255);"));
-        pushButton_14 = new QPushButton(widget_2);
-        pushButton_14->setObjectName("pushButton_14");
-        pushButton_14->setGeometry(QRect(10, 340, 171, 101));
-        pushButton_14->setMaximumSize(QSize(16777200, 16777208));
-        pushButton_14->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 255);"));
-        pushButton_15 = new QPushButton(widget_2);
-        pushButton_15->setObjectName("pushButton_15");
-        pushButton_15->setGeometry(QRect(10, 450, 171, 101));
-        pushButton_15->setMaximumSize(QSize(16777200, 16777208));
-        pushButton_15->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 255);"));
-        tableView_2 = new QTableView(page_2);
-        tableView_2->setObjectName("tableView_2");
-        tableView_2->setGeometry(QRect(190, 200, 501, 371));
-        label = new QLabel(page_2);
-        label->setObjectName("label");
-        label->setGeometry(QRect(550, 20, 291, 141));
-        label->setStyleSheet(QString::fromUtf8("image: url(:/res/11.jpg);"));
-        label_time = new QLabel(page_2);
-        label_time->setObjectName("label_time");
-        label_time->setGeometry(QRect(370, 100, 141, 31));
-        label_time->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 245, 221);\n"
-"border-radius: 8px;\n"
-"padding: 8px 16px;\n"
-"font-size: 14px;\n"
-"font-weight: bold;"));
-        label_time->setAlignment(Qt::AlignmentFlag::AlignCenter);
         stackedWidget->addWidget(page_2);
         Gclinet->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Gclinet);
@@ -726,8 +657,9 @@ public:
         anuulerClient->setText(QCoreApplication::translate("Gclinet", "Anuuler", nullptr));
         label_8->setText(QString());
         label_7->setText(QCoreApplication::translate("Gclinet", "Ajouter un Clinet", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("Gclinet", "Nom", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("Gclinet", "Nb-projet", nullptr));
+        nomClient_3->setText(QCoreApplication::translate("Gclinet", "ID:", nullptr));
+        tri->setItemText(0, QCoreApplication::translate("Gclinet", "nb_projet+", nullptr));
+        tri->setItemText(1, QCoreApplication::translate("Gclinet", "Nb-projet-", nullptr));
 
         pushButton_8->setText(QCoreApplication::translate("Gclinet", "Recherche", nullptr));
         suppclient->setText(QCoreApplication::translate("Gclinet", "Supprimer", nullptr));
@@ -742,19 +674,12 @@ public:
         pushButton->setText(QCoreApplication::translate("Gclinet", "Se D\303\251connecter", nullptr));
         pushButton_16->setText(QCoreApplication::translate("Gclinet", "Architect", nullptr));
         pushButton_18->setText(QCoreApplication::translate("Gclinet", "statistiques", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("Gclinet", "PDF", nullptr));
+        exportPdfButton->setText(QCoreApplication::translate("Gclinet", "PDF", nullptr));
         label_4->setText(QString());
         label_5->setText(QString());
         label_6->setText(QString());
         label_9->setText(QCoreApplication::translate("Gclinet", "Tri:", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Gclinet", "Acceuil", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("Gclinet", "Dashboard", nullptr));
-        pushButton_12->setText(QCoreApplication::translate("Gclinet", "Client", nullptr));
-        pushButton_13->setText(QCoreApplication::translate("Gclinet", "Tache", nullptr));
-        pushButton_14->setText(QCoreApplication::translate("Gclinet", "Formation", nullptr));
-        pushButton_15->setText(QCoreApplication::translate("Gclinet", "Projet", nullptr));
-        label->setText(QString());
-        label_time->setText(QCoreApplication::translate("Gclinet", "00:00:00", nullptr));
     } // retranslateUi
 
 };

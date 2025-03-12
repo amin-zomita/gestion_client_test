@@ -4,8 +4,7 @@
 #include <QMainWindow>
 #include "clientmanager.h"
 #include"QMessageBox"
-#include <QTimer>
-#include <QTime>
+#include <QSystemTrayIcon>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,6 +20,8 @@ public:
     Gclinet(QWidget *parent = nullptr);
     ~Gclinet();
 
+    void showNotification(QString message, QString titre, QSystemTrayIcon::MessageIcon icon);
+
 private slots:
     void on_pushButton_clicked();
 
@@ -30,15 +31,20 @@ private slots:
 
     void on_anuulerClient_clicked();
 
-    void updateTime(); // Function to update time
 
     void on_suppclient_clicked();
 
     void on_modifierClient_clicked();
 
+    void on_exportPdfButton_clicked();
+
+    void onTriChanged(int index);
+
+
 private:
     Ui::Gclinet *ui;
     ClientManager Client;  // Déclaration de l'objet
-    QTimer *timer; // Timer for updating time
+    QSystemTrayIcon *trayIcon;  // Déclaration d'un attribut trayIcon
+
 };
 #endif // GCLINET_H

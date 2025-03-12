@@ -152,9 +152,9 @@ QLineEdit:focus {
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>110</y>
+         <y>105</y>
          <width>171</width>
-         <height>26</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -163,7 +163,7 @@ QLineEdit:focus {
 
 border-radius: 8px;
 padding: 8px 16px;
-font-size: 14px;
+font-size: 12px;
 font-weight: bold;
 </string>
        </property>
@@ -172,9 +172,9 @@ font-weight: bold;
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>180</y>
+         <y>175</y>
          <width>171</width>
-         <height>26</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -183,7 +183,7 @@ font-weight: bold;
 
 border-radius: 8px;
 padding: 8px 16px;
-font-size: 14px;
+font-size: 12px;
 font-weight: bold;
 </string>
        </property>
@@ -195,9 +195,9 @@ font-weight: bold;
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>260</y>
+         <y>255</y>
          <width>171</width>
-         <height>26</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -206,7 +206,7 @@ font-weight: bold;
 
 border-radius: 8px;
 padding: 8px 16px;
-font-size: 14px;
+font-size: 12px;
 font-weight: bold;
 </string>
        </property>
@@ -217,7 +217,7 @@ font-weight: bold;
          <x>50</x>
          <y>330</y>
          <width>171</width>
-         <height>26</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -226,7 +226,7 @@ font-weight: bold;
 
 border-radius: 8px;
 padding: 8px 16px;
-font-size: 14px;
+font-size: 12px;
 font-weight: bold;
 </string>
        </property>
@@ -333,11 +333,30 @@ font-weight: bold;
       <widget class="QLineEdit" name="IDC">
        <property name="geometry">
         <rect>
-         <x>40</x>
+         <x>50</x>
          <y>40</y>
          <width>161</width>
-         <height>26</height>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="nomClient_3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>21</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ID:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
        </property>
       </widget>
      </widget>
@@ -346,7 +365,7 @@ font-weight: bold;
        <rect>
         <x>710</x>
         <y>220</y>
-        <width>591</width>
+        <width>651</width>
         <height>291</height>
        </rect>
       </property>
@@ -391,12 +410,12 @@ QTableView::item:hover {
 </string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="tri">
       <property name="geometry">
        <rect>
         <x>1200</x>
         <y>170</y>
-        <width>121</width>
+        <width>151</width>
         <height>31</height>
        </rect>
       </property>
@@ -426,12 +445,12 @@ QComboBox::drop-down {
       </property>
       <item>
        <property name="text">
-        <string>Nom</string>
+        <string>nb_projet+</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Nb-projet</string>
+        <string>Nb-projet-</string>
        </property>
       </item>
      </widget>
@@ -503,33 +522,6 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>Supprimer</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>1270</x>
-        <y>530</y>
-        <width>71</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
-    background-color: white;
-    color: black;
-    font-size: 14px;
-    font-weight: bold;
-    border: 2px solid #4A4A4A; /* Bleu comme le bouton */
-    border-radius: 8px;
-    padding: 8px 15px;
-    transition: all 0.3s ease-in-out;
-}
-
-QLineEdit:focus {
-    border: 2px solid #1f618d; /* Changement au focus, comme le hover du bouton */
-}
-</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit">
@@ -991,7 +983,7 @@ QPushButton:pressed {
         <string>statistiques</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_10">
+      <widget class="QPushButton" name="exportPdfButton">
        <property name="geometry">
         <rect>
          <x>820</x>
@@ -1102,184 +1094,6 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>Acceuil</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widget_2" native="true">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>191</width>
-        <height>581</height>
-       </rect>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LayoutDirection::LeftToRight</enum>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 198, 198);</string>
-      </property>
-      <widget class="QPushButton" name="pushButton_11">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>171</width>
-         <height>101</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777200</width>
-         <height>16777208</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>Dashboard</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_12">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>171</width>
-         <height>101</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777200</width>
-         <height>16777208</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>Client</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_13">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>230</y>
-         <width>171</width>
-         <height>101</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777200</width>
-         <height>16777208</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>Tache</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_14">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>340</y>
-         <width>171</width>
-         <height>101</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777200</width>
-         <height>16777208</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>Formation</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_15">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>450</y>
-         <width>171</width>
-         <height>101</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777200</width>
-         <height>16777208</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>Projet</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QTableView" name="tableView_2">
-      <property name="geometry">
-       <rect>
-        <x>190</x>
-        <y>200</y>
-        <width>501</width>
-        <height>371</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>550</x>
-        <y>20</y>
-        <width>291</width>
-        <height>141</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">image: url(:/res/11.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_time">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>100</y>
-        <width>141</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 245, 221);
-border-radius: 8px;
-padding: 8px 16px;
-font-size: 14px;
-font-weight: bold;</string>
-      </property>
-      <property name="text">
-       <string>00:00:00</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
     </widget>
